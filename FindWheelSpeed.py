@@ -6,7 +6,6 @@ wheel_radius_m = 10 * 2.54 / 2
 driving == True
 
 lamda_p = p2 ** -0.5
-vx_mps = 10
 
 
 
@@ -41,7 +40,7 @@ def send_torque_request(torque_Nm):
 
 class Controller():
     def __init__(self)
-        self.vx_initial.mps = read_ground_speed_sensor_mps()
+        self.vx_initial_mps = read_ground_speed_sensor_mps()
         self.wheel_velocity_initial_mps = read_wheel_speed_mps()
         self.vxs = []
         self.wheel_speeds = []
