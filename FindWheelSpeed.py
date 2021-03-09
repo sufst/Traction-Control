@@ -62,7 +62,12 @@ class Controller():
 
 controller = Controller("some stuff")
 
+from simple_pid import PID
+pid = PID(1, 0.1, 0.05, setpoint= wheel_angular_velocity_mps )
+pid.sample_time = 0.01
+
 while driving == True:
     controller.adjust_motor_torque()
+    controlled_slip = pid(current_wheelspeed)
     
 
